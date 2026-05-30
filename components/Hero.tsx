@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
   const opacityBg = useTransform(scrollY, [0, 800], [1, 0.4]); // Leve transparência ao rolar
 
   return (
-    <section id="hero" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-brand-darker pt-20 pb-10">
+    <section id="hero" className="relative w-full min-h-[80vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-brand-darker pt-24 pb-8 lg:pt-28 lg:pb-12">
       
       {/* --- Background Immersive com Parallax --- */}
       <motion.div 
@@ -116,11 +116,13 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-gray-300 text-base md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 whitespace-pre-line"
+              className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed max-w-2xl mx-auto lg:mx-0 whitespace-pre-line"
             >
               A Comunidade Team Kbça é para treinadores que querem sair do improviso, entender melhor o jogo e aplicar ideias práticas no treino, na gestão do grupo e nas decisões de quadra.
               {"\n\n"}
               Da introdução ao adulto, do recreativo ao alto rendimento: aqui, além de aprender futsal, você troca experiência com quem vive realidades como a sua todos os dias.
+              {"\n\n"}
+              Quem viveu os encontros presenciais promovidos pelo team Kbça, vai poder viver exatamente a essência dele online.
             </motion.p>
             
             <motion.div 
@@ -142,7 +144,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="mt-12 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-400 border-t border-white/5 pt-6"
+              className="mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-400 border-t border-white/5 pt-4"
             >
               <div className="flex items-center gap-1 text-brand-orange">
                 {[1,2,3,4,5].map(i => <Star key={i} size={16} fill="currentColor" className="text-brand-orange" />)}

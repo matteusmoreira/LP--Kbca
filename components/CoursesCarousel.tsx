@@ -423,12 +423,12 @@ export const CoursesCarousel: React.FC = () => {
   };
 
   return (
-    <section id="courses" className="py-24 bg-brand-darker relative overflow-hidden select-none">
+    <section id="courses" className="pt-16 pb-6 md:pt-20 md:pb-8 bg-brand-darker relative overflow-hidden select-none">
       {/* Background Decorativo */}
       <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-brand-blue/5 to-transparent pointer-events-none"></div>
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-6">
           <div className="max-w-2xl">
             <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-4 leading-tight">
               Estudo <span className="text-brand-blue">personalizado</span>
@@ -498,7 +498,7 @@ export const CoursesCarousel: React.FC = () => {
               onMouseMove={handleMouseMove}
               onScroll={checkScroll}
               style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
-              className={`flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar pb-12 px-4 snap-x snap-mandatory ${isDragging ? 'cursor-grabbing snap-none' : 'cursor-grab'}`}
+              className={`flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar pb-6 px-4 snap-x snap-mandatory ${isDragging ? 'cursor-grabbing snap-none' : 'cursor-grab'}`}
             >
               {COURSES.map((course, index) => (
                 <CourseCard 

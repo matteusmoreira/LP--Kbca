@@ -43,13 +43,13 @@ const FEATURES: Feature[] = [
 
 export const PlatformFeatures: React.FC = () => {
   return (
-    <section id="platform" className="py-24 bg-brand-darker relative overflow-hidden">
+    <section id="platform" className="pt-10 pb-16 md:pt-12 md:pb-20 bg-brand-darker relative overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-10">
           <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6 leading-tight">
             Não é mais um curso de futsal. <br />
             <span className="text-brand-blue">
