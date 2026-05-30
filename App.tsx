@@ -1,11 +1,10 @@
-import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { CoursesCarousel } from './components/CoursesCarousel';
 import { PlatformFeatures } from './components/PlatformFeatures';
 import { About } from './components/About';
-import { LeadForm } from './components/LeadForm';
 import { Footer } from './components/Footer';
+import { WhatsAppFloating } from './components/WhatsAppFloating';
 
 function App() {
   return (
@@ -16,9 +15,9 @@ function App() {
         <CoursesCarousel />
         <PlatformFeatures />
         <About />
-        <LeadForm />
       </main>
       <Footer />
+      <WhatsAppFloating />
     </div>
   );
 }

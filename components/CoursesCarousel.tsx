@@ -7,107 +7,43 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 const COURSES: Course[] = [
   {
     id: 1,
-    title: "Atividades para desenvolver a técnica",
-    description: "Exercícios práticos de controle, passe e drible para elevar o nível técnico dos atletas.",
+    title: "Teorias",
+    description: "Alicerce científico do que acreditamos ser importante para o treinador.",
     image: "",
-    modules: 15,
-    duration: "8h"
+    modules: 12,
+    duration: "Conteúdo Técnico"
   },
   {
     id: 2,
-    title: "EITF - Seja Competente",
-    description: "O pilar fundamental da Escola de Treinadores. Desenvolva as competências essenciais de liderança.",
+    title: "Atividades na prancheta",
+    description: "Atividades comentadas com explicação de objetivo, variações e observações.",
     image: "",
-    modules: 24,
-    duration: "20h"
+    modules: 50,
+    duration: "Exercícios Práticos"
   },
   {
     id: 3,
-    title: "Tática Individual",
-    description: "Leitura de jogo e tomada de decisão. O comportamento do atleta com e sem a bola.",
+    title: "Análises de jogo",
+    description: "Entenda o “olhar do Kbça” através de análises de lances de jogos.",
     image: "",
-    modules: 12,
-    duration: "10h"
+    modules: 30,
+    duration: "Estudos de Caso"
   },
   {
     id: 4,
-    title: "Mentoria + Módulos",
-    description: "Aceleração de carreira com acompanhamento próximo e acesso total ao acervo.",
+    title: "Trilhas de aprendizagem",
+    description: "Direcionamento de conteúdo adequado a cada contexto de atuação.",
     image: "",
-    modules: 50,
-    duration: "Híbrido"
+    modules: 6,
+    duration: "Direcionamento"
   },
   {
     id: 5,
-    title: "EITF 1",
-    description: "Iniciação Esportiva: Pedagogia e prática para as categorias menores (Sub-7 ao Sub-11).",
-    image: "",
-    modules: 8,
-    duration: "6h"
-  },
-  {
-    id: 6,
-    title: "EITF 2",
-    description: "Metodologia de Treino: Estruturação de sessões, microciclos e periodização.",
-    image: "",
-    modules: 8,
-    duration: "6h"
-  },
-  {
-    id: 7,
-    title: "EITF 3",
-    description: "Sistemas Defensivos: Marcação zona, individual, mista e defesa de goleiro linha.",
-    image: "",
-    modules: 10,
-    duration: "8h"
-  },
-  {
-    id: 8,
-    title: "EITF 4",
-    description: "Sistemas Ofensivos: Padrões 4x0, 3x1, 2x2 e movimentações de quebra de linha.",
-    image: "",
-    modules: 10,
-    duration: "8h"
-  },
-  {
-    id: 9,
-    title: "EITF 5",
-    description: "Transições: A fase caótica do jogo. Comportamentos de ataque rápido e recomposição.",
-    image: "",
-    modules: 8,
-    duration: "6h"
-  },
-  {
-    id: 10,
-    title: "EITF 6",
-    description: "Bolas Paradas: O detalhe que decide jogos. Escanteios, laterais e faltas ensaiadas.",
-    image: "",
-    modules: 6,
-    duration: "4h"
-  },
-  {
-    id: 11,
-    title: "Vem ser - O Ataque",
-    description: "Imersão total na fase ofensiva. Criatividade, finalização e construção de jogadas.",
-    image: "",
-    modules: 14,
-    duration: "12h"
-  },
-  {
-    id: 12,
-    title: "Mentoria Individual",
-    description: "Análise exclusiva do seu modelo de jogo e direcionamento de carreira personalizado.",
+    title: "Fórum",
+    description: "Troque experiências com treinadores com vivências semelhantes.",
     image: "",
     modules: 1,
-    duration: "Ao Vivo"
-  },
-  {
-    id: 13,
-    title: "Introdução ao Futsal",
-    description: "História, regras oficiais atualizadas e fundamentos básicos do esporte.",
-    image: "",
-    modules: 5,
-    duration: "3h"
+    duration: "Networking"
   }
 ];
 
@@ -344,7 +280,7 @@ const CourseCard: React.FC<{ course: Course; index: number; isDragging: boolean 
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`snap-start min-w-[300px] md:min-w-[360px] bg-brand-dark rounded-3xl overflow-hidden border border-white/5 ${style.borderColor} transition-all duration-500 ease-out flex flex-col group relative
+      className={`snap-start min-w-[280px] sm:min-w-[320px] md:min-w-[360px] bg-brand-dark rounded-3xl overflow-hidden border border-white/5 ${style.borderColor} transition-all duration-500 ease-out flex flex-col group relative
       ${isDragging ? 'pointer-events-none transform-none' : 'hover:shadow-2xl hover:shadow-brand-blue/20 hover:-translate-y-3 hover:scale-[1.02]'}`}
     >
       {/* Header Artístico Premium */}
@@ -419,7 +355,7 @@ const CourseCard: React.FC<{ course: Course; index: number; isDragging: boolean 
         <div className="flex items-center justify-between text-gray-400 text-xs font-medium border-t border-white/5 pt-4 mt-auto relative z-10">
           <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded hover:bg-white/10 transition-colors">
             <BookOpen size={14} className="text-brand-cyan transition-all duration-300 group-hover:scale-125 group-hover:drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]" />
-            <span>{course.modules} Módulos</span>
+            <span>{course.modules} {course.modules > 1 ? 'Tópicos' : 'Tópico'}</span>
           </div>
           <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded hover:bg-white/10 transition-colors">
             <Clock size={14} className="text-brand-cyan transition-all duration-300 group-hover:scale-125 group-hover:drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]" />
@@ -429,7 +365,7 @@ const CourseCard: React.FC<{ course: Course; index: number; isDragging: boolean 
       </div>
       
       <div className="absolute inset-0 z-20" aria-label={`Ver detalhes de ${course.title}`}>
-           <a href="#capture" className="block w-full h-full" onClick={(e) => isDragging && e.preventDefault()} />
+           <a href="https://teamkbca.com.br/finalizar-compra/?add-to-cart=2646" className="block w-full h-full" onClick={(e) => isDragging && e.preventDefault()} />
       </div>
     </div>
   );
@@ -509,10 +445,10 @@ export const CoursesCarousel: React.FC = () => {
               </span>
             </div>
             <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-4 leading-tight">
-              Evolução <span className="text-brand-blue">Tática</span> & Técnica
+              Estudo <span className="text-brand-blue">personalizado</span>
             </h2>
             <p className="text-gray-400 text-lg">
-              Escolha seu próximo passo. Cursos desenhados para a realidade da quadra.
+              Escolha o que quer estudar: por onde começar e o que quer aprender.
             </p>
           </div>
           
@@ -576,7 +512,7 @@ export const CoursesCarousel: React.FC = () => {
               onMouseMove={handleMouseMove}
               onScroll={checkScroll}
               style={{ scrollBehavior: isDragging ? 'auto' : 'smooth' }}
-              className={`flex gap-6 overflow-x-auto no-scrollbar pb-12 px-4 snap-x snap-mandatory ${isDragging ? 'cursor-grabbing snap-none' : 'cursor-grab'}`}
+              className={`flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar pb-12 px-4 snap-x snap-mandatory ${isDragging ? 'cursor-grabbing snap-none' : 'cursor-grab'}`}
             >
               {COURSES.map((course, index) => (
                 <CourseCard 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Instagram, Youtube, Facebook } from 'lucide-react';
+import { Instagram } from 'lucide-react';
+import { Logo } from './Header';
 
 export const Footer: React.FC = () => {
   return (
@@ -7,28 +8,23 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <img 
-              src="/logo.png" 
-              alt="Team KBça" 
-              className="h-10 w-auto object-contain"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.nextElementSibling?.classList.remove('hidden');
-              }}
-            />
-            <div className="hidden text-2xl font-display font-bold text-white tracking-tighter">
-              TEAM <span className="text-brand-blue">KBÇA</span>
-            </div>
+            <Logo className="h-8 w-auto" />
           </div>
           
           <div className="flex gap-6">
-            <a href="#" className="text-gray-400 hover:text-brand-blue transition-colors"><Instagram /></a>
-            <a href="#" className="text-gray-400 hover:text-brand-blue transition-colors"><Youtube /></a>
-            <a href="#" className="text-gray-400 hover:text-brand-blue transition-colors"><Facebook /></a>
+            <a 
+              href="https://www.instagram.com/kbcafutsal/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-brand-blue transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram />
+            </a>
           </div>
           
           <div className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Team KBça. Todos os direitos reservados.
+            © 2026 Team KBÇA. Todos os direitos reservados.
           </div>
         </div>
       </div>

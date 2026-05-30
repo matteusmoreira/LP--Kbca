@@ -1,42 +1,42 @@
 import React from 'react';
-import { Users, Video, MessageSquare, Award, Target, Layout } from 'lucide-react';
+import { Users, Video, MessageSquare, RefreshCw, Target, Layout } from 'lucide-react';
 import { Feature } from '../types';
 
 const FEATURES: Feature[] = [
   {
     id: 1,
-    title: "Comunidade Exclusiva",
-    description: "Acesso a grupos VIPs para troca de experiências diárias com treinadores de todo o Brasil.",
+    title: "Comunidade exclusiva",
+    description: "Participe de um grupo com treinadores de diferentes categorias, níveis e realidades. Troque ideias, dúvidas, exercícios e experiências que ajudam no dia a dia.",
     icon: <Users className="w-8 h-8 text-brand-blue" />
   },
   {
     id: 2,
-    title: "Encontros Ao Vivo",
-    description: "Mentorias mensais via Zoom para tirar dúvidas, analisar jogos e discutir tendências.",
+    title: "Encontros ao vivo",
+    description: "Encontros online para aprofundar temas, analisar situações de jogo, discutir treinos e responder dúvidas dos participantes.",
     icon: <Video className="w-8 h-8 text-brand-blue" />
   },
   {
     id: 3,
-    title: "Fórum de Discussão",
-    description: "Espaço organizado por temas para debater táticas, exercícios e gestão de carreira.",
+    title: "Espaço de discussão",
+    description: "Um ambiente organizado para falar de futsal de verdade: metodologia, comportamento, gestão de grupo, tática, formação e carreira.",
     icon: <MessageSquare className="w-8 h-8 text-brand-blue" />
   },
   {
     id: 4,
-    title: "Certificados Oficiais",
-    description: "Emissão de certificado de conclusão válido para horas complementares em todos os cursos.",
-    icon: <Award className="w-8 h-8 text-brand-blue" />
+    title: "Aprendizagem contínua",
+    description: "Plataforma atualizada constantemente com novos conteúdos.",
+    icon: <RefreshCw className="w-8 h-8 text-brand-blue" />
   },
   {
     id: 5,
-    title: "Exercícios Práticos",
-    description: "Biblioteca de exercícios animados e filmados para você aplicar no seu treino amanhã.",
+    title: "Exercícios práticos",
+    description: "Tenha acesso a atividades para estudar e ajudar no seu treino, com explicações mais claras sobre objetivo, organização e correções.",
     icon: <Target className="w-8 h-8 text-brand-blue" />
   },
   {
     id: 6,
-    title: "Plataforma Intuitiva",
-    description: "Assista onde e quando quiser. App compatível com celular, tablet e computador.",
+    title: "Plataforma intuitiva",
+    description: "Acesse os conteúdos pelo celular, tablet ou computador, no seu ritmo e de acordo com a sua rotina.",
     icon: <Layout className="w-8 h-8 text-brand-blue" />
   }
 ];
@@ -49,12 +49,15 @@ export const PlatformFeatures: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-4">
-            Muito Mais que <span className="text-brand-blue">Apenas Vídeos</span>
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6 leading-tight">
+            Não é mais um curso de futsal. <br />
+            <span className="text-brand-blue">
+              Uma comunidade para treinadores <br className="hidden md:inline" /> que vivem o futsal.
+            </span>
           </h2>
-          <p className="text-gray-400 text-lg">
-            O Team KBça é um ecossistema completo desenhado para acelerar sua carreira no futsal.
+          <p className="text-gray-400 text-lg leading-relaxed">
+            O Team Kbça é um ecossistema criado para quem quer aprender, trocar experiências, tirar dúvidas e crescer com outros treinadores que enfrentam os mesmos desafios de quadra.
           </p>
         </div>
 

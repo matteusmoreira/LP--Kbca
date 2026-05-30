@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+export const Logo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
+  <svg viewBox="0 0 160 40" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="15" stroke="#2563EB" strokeWidth="2.5" />
+    <circle cx="20" cy="20" r="6" stroke="#06B6D4" strokeWidth="1.5" />
+    <path d="M20 5v30M5 20h30" stroke="#2563EB" strokeWidth="1" strokeDasharray="2 2" opacity="0.7" />
+    <circle cx="20" cy="20" r="1.5" fill="#F97316" />
+    <text x="45" y="27" fill="white" fontSize="18" fontWeight="bold" fontFamily="Montserrat, sans-serif" letterSpacing="-0.5">
+      TEAM <tspan fill="#2563EB">KBÇA</tspan>
+    </text>
+  </svg>
+);
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,8 +28,8 @@ export const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'Início', href: '#hero' },
-    { name: 'Cursos', href: '#courses' },
-    { name: 'Plataforma', href: '#platform' },
+    { name: 'Aprendizagem', href: '#courses' },
+    { name: 'Comunidade', href: '#platform' },
     { name: 'Sobre', href: '#about' },
   ];
 
@@ -28,21 +41,8 @@ export const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo Section */}
-        <a href="#hero" className="flex items-center gap-2">
-           <img 
-            src="/logo.png" 
-            alt="Team KBça" 
-            className="h-12 w-auto object-contain"
-            onError={(e) => {
-              // Fallback if logo is missing
-              e.currentTarget.style.display = 'none';
-              e.currentTarget.nextElementSibling?.classList.remove('hidden');
-            }}
-           />
-           {/* Text fallback if image fails or isn't present yet */}
-           <div className="hidden text-2xl font-display font-bold text-white tracking-tighter">
-             TEAM <span className="text-brand-blue">KBÇA</span>
-           </div>
+        <a href="#hero" className="flex items-center gap-2 transition-transform hover:scale-[1.02] active:scale-95" aria-label="Voltar ao início">
+           <Logo className="h-10 w-auto" />
         </a>
 
         {/* Desktop Nav */}
@@ -59,10 +59,10 @@ export const Header: React.FC = () => {
         </nav>
 
         <a 
-          href="#capture" 
+          href="https://teamkbca.com.br/finalizar-compra/?add-to-cart=2646" 
           className="hidden md:inline-flex px-6 py-2 bg-brand-blue hover:bg-blue-700 text-white font-bold rounded-full transition-transform hover:scale-105 shadow-lg shadow-blue-500/30"
         >
-          Entrar Agora
+          Quero Fazer parte
         </a>
 
         {/* Mobile Toggle */}
@@ -75,27 +75,35 @@ export const Header: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-brand-darker border-b border-white/10 p-4 flex flex-col space-y-4 shadow-2xl">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              className="text-white font-semibold text-lg py-2 border-b border-white/5"
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="md:hidden absolute top-full left-0 right-0 bg-brand-darker border-b border-white/10 p-4 flex flex-col space-y-4 shadow-2xl overflow-hidden"
+          >
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className="text-white font-semibold text-lg py-2 border-b border-white/5 transition-colors hover:text-brand-blue"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+             <a 
+              href="https://teamkbca.com.br/finalizar-compra/?add-to-cart=2646"
+              className="w-full text-center py-3 bg-brand-blue text-white font-bold rounded-lg transition-transform active:scale-95"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {link.name}
+              Quero Fazer parte
             </a>
-          ))}
-           <a 
-            href="#capture"
-            className="w-full text-center py-3 bg-brand-blue text-white font-bold rounded-lg"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Começar Agora
-          </a>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

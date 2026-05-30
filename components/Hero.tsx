@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { ChevronRight, PlayCircle, Star, Users, Hand, Move } from 'lucide-react';
+import { ChevronRight, Star, Hand, Move } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const FutsalCourtLines = () => (
@@ -76,8 +76,12 @@ export const Hero: React.FC = () => {
       >
         {/* Imagem de Futsal/Estádio Escura */}
         <img 
-          src="https://images.unsplash.com/photo-1516567838555-81786e8211a7?q=80&w=2070&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1516567838555-81786e8211a7?auto=format&fit=crop&w=1200&q=70" 
+          srcSet="https://images.unsplash.com/photo-1516567838555-81786e8211a7?auto=format&fit=crop&w=640&q=60 640w, https://images.unsplash.com/photo-1516567838555-81786e8211a7?auto=format&fit=crop&w=1200&q=70 1200w, https://images.unsplash.com/photo-1516567838555-81786e8211a7?auto=format&fit=crop&w=1600&q=75 1600w"
+          sizes="100vw"
           alt="Quadra de Futsal Background" 
+          loading="eager"
+          decoding="async"
           className="w-full h-full object-cover opacity-20 scale-110 origin-center" // Scale aumentado para evitar bordas brancas no paralaxe
         />
         {/* Overlay Gradiente Forte */}
@@ -111,23 +115,24 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white mb-6"
+              className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-5xl leading-[1.15] text-white mb-6 tracking-tight"
             >
-              DOMINE CADA <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-blue">
-                CENTÍMETRO
-              </span> DA <br/>
-              QUADRA
+              <span className="block sm:whitespace-nowrap">O FUTSAL EVOLUI.</span>
+              <span className="block sm:whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-blue">
+                O TREINADOR TAMBÉM
+              </span>
+              <span className="block sm:whitespace-nowrap">PRECISA EVOLUIR.</span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-gray-300 text-base md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 whitespace-pre-line"
             >
-              A prancheta não mente. Aprenda tática, gestão de elenco e leitura de jogo 
-              com quem vive o futsal de alto nível. Do sub-7 ao profissional.
+              A Comunidade Team Kbça é para treinadores que querem sair do improviso, entender melhor o jogo e aplicar ideias práticas no treino, na gestão do grupo e nas decisões de quadra.
+              {"\n\n"}
+              Da introdução ao adulto, do recreativo ao alto rendimento: aqui, além de aprender futsal, você troca experiência com quem vive realidades como a sua todos os dias.
             </motion.p>
             
             <motion.div 
@@ -137,19 +142,11 @@ export const Hero: React.FC = () => {
               className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
             >
               <a 
-                href="#capture" 
+                href="https://teamkbca.com.br/finalizar-compra/?add-to-cart=2646" 
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-lg transition-all hover:scale-105 shadow-lg shadow-blue-500/25 text-lg group"
               >
-                Quero Evoluir Agora
+                Quero Fazer Parte
                 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              
-              <a 
-                href="#courses"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-md text-white font-semibold rounded-lg border border-white/10 transition-all text-lg"
-              >
-                <PlayCircle size={20} className="text-brand-cyan" />
-                Ver Cursos
               </a>
             </motion.div>
             
@@ -159,17 +156,12 @@ export const Hero: React.FC = () => {
               transition={{ duration: 1, delay: 0.8 }}
               className="mt-12 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-400 border-t border-white/5 pt-6"
             >
-              <div className="flex items-center gap-2">
-                  <Users size={18} className="text-brand-blue" />
-                  <span>Junte-se a <strong className="text-white">1.200+</strong> treinadores</span>
+              <div className="flex items-center gap-1 text-brand-orange">
+                {[1,2,3,4,5].map(i => <Star key={i} size={16} fill="currentColor" className="text-brand-orange" />)}
               </div>
-              <div className="w-1 h-1 bg-gray-600 rounded-full"></div>
-              <div className="flex items-center gap-1">
-                  <div className="flex text-brand-orange">
-                    {[1,2,3,4,5].map(i => <Star key={i} size={12} fill="currentColor" />)}
-                  </div>
-                  <span className="text-white font-bold ml-1">5.0</span>
-              </div>
+              <span className="text-gray-300">
+                Junte-se a treinadores que querem evoluir de verdade.
+              </span>
             </motion.div>
           </div>
         </div>
@@ -257,12 +249,15 @@ export const Hero: React.FC = () => {
             className="absolute -bottom-8 -left-8 bg-brand-dark border border-white/10 p-4 rounded-xl shadow-xl z-20 pointer-events-none"
           >
              <div className="flex items-center gap-3">
-               <div className="w-10 h-10 rounded-full bg-brand-blue/20 flex items-center justify-center text-brand-blue">
-                 <img src="/logo.png" className="w-6 h-6 object-contain opacity-80" alt="" onError={(e) => e.currentTarget.style.display = 'none'} />
-                 <Star size={20} className="absolute" />
+               <div className="w-10 h-10 rounded-full bg-brand-blue/20 flex items-center justify-center text-brand-blue relative">
+                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5 text-brand-cyan">
+                   <circle cx="12" cy="12" r="10" />
+                   <path d="M12 2v20M2 12h20" strokeDasharray="3 2" />
+                 </svg>
+                 <Star size={10} className="absolute -top-1 -right-1 text-brand-orange fill-brand-orange" />
                </div>
                <div>
-                 <p className="text-white font-bold text-sm">Coach KBça</p>
+                 <p className="text-white font-bold text-sm">COACH KBÇA</p>
                  <p className="text-xs text-gray-400">Analista Tático</p>
                </div>
              </div>

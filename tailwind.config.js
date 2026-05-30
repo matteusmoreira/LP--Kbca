@@ -20,6 +20,21 @@ export default {
           darker: '#020617', // Slate-950
           light: '#F8FAFC',  // Slate-50
         }
+      },
+      keyframes: {
+        'pulse-red': {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(239, 68, 68, 0.7)',
+          },
+          '50%': {
+            transform: 'scale(1.04)',
+            boxShadow: '0 0 0 15px rgba(239, 68, 68, 0)',
+          },
+        },
+      },
+      animation: {
+        'pulse-red': 'pulse-red 2s infinite',
       }
     },
   },
