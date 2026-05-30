@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
         </nav>
 
         <a 
-          href="https://teamkbca.com.br/finalizar-compra/?add-to-cart=2646" 
+          href="#about" 
           className="hidden md:inline-flex px-6 py-2 bg-brand-blue hover:bg-blue-700 text-white font-bold rounded-full transition-transform hover:scale-105 shadow-lg shadow-blue-500/30"
         >
           Quero Fazer parte
@@ -96,7 +96,7 @@ export const Header: React.FC = () => {
               </a>
             ))}
              <a 
-              href="https://teamkbca.com.br/finalizar-compra/?add-to-cart=2646"
+              href="#about"
               className="w-full text-center py-3 bg-brand-blue text-white font-bold rounded-lg transition-transform active:scale-95"
               onClick={() => setIsMobileMenuOpen(false)}
             >

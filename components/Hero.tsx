@@ -132,7 +132,7 @@ export const Hero: React.FC = () => {
               className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
             >
               <a 
-                href="https://teamkbca.com.br/finalizar-compra/?add-to-cart=2646" 
+                href="#about" 
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-lg transition-all hover:scale-105 shadow-lg shadow-blue-500/25 text-lg group"
               >
                 Quero Fazer Parte
