@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { Course } from '../types';
-import { Clock, BookOpen, ChevronRight, ChevronLeft, Activity, Shield, Target, Zap } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Activity, Shield, Target, Zap } from 'lucide-react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 // Lista de Cursos Atualizada
@@ -352,16 +352,7 @@ const CourseCard: React.FC<{ course: Course; index: number; isDragging: boolean 
           {course.description}
         </p>
         
-        <div className="flex items-center justify-between text-gray-400 text-xs font-medium border-t border-white/5 pt-4 mt-auto relative z-10">
-          <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded hover:bg-white/10 transition-colors">
-            <BookOpen size={14} className="text-brand-cyan transition-all duration-300 group-hover:scale-125 group-hover:drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]" />
-            <span>{course.modules} {course.modules > 1 ? 'Tópicos' : 'Tópico'}</span>
-          </div>
-          <div className="flex items-center gap-1.5 bg-white/5 px-2 py-1 rounded hover:bg-white/10 transition-colors">
-            <Clock size={14} className="text-brand-cyan transition-all duration-300 group-hover:scale-125 group-hover:drop-shadow-[0_0_5px_rgba(6,182,212,0.8)]" />
-            <span>{course.duration}</span>
-          </div>
-        </div>
+
       </div>
       
       <div className="absolute inset-0 z-20" aria-label={`Ver detalhes de ${course.title}`}>

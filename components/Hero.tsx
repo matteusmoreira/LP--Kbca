@@ -99,18 +99,6 @@ export const Hero: React.FC = () => {
         {/* --- Conteúdo Texto (Esquerda) --- */}
         <div className="flex-1 max-w-3xl lg:text-left text-center pointer-events-none">
           <div className="pointer-events-auto">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 mb-8 border border-brand-blue/30 rounded-full bg-brand-blue/10 backdrop-blur-md"
-            >
-              <Star size={14} className="text-brand-orange fill-brand-orange" />
-              <span className="text-brand-blue font-bold text-xs md:text-sm tracking-widest uppercase">
-                Metodologia de Campeões
-              </span>
-            </motion.div>
-            
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

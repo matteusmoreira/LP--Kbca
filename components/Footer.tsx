@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
           
           <div className="flex gap-6">
             <a 
-              href="https://www.instagram.com/kbcafutsal/" 
+              href="https://www.instagram.com/teamkbca" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-gray-400 hover:text-brand-blue transition-colors"
