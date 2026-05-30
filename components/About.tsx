@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, ArrowRight, CreditCard } from 'lucide-react';
+import { CheckCircle, CreditCard } from 'lucide-react';
 
 const PixIcon = ({ className }: { className?: string }) => (
   <svg 
