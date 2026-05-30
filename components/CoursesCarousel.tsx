@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { Course } from '../types';
-import { Clock, BookOpen, ChevronRight, ChevronLeft, Star, Activity, Shield, Target, Zap } from 'lucide-react';
+import { Clock, BookOpen, ChevronRight, ChevronLeft, Activity, Shield, Target, Zap } from 'lucide-react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 // Lista de Cursos Atualizada
@@ -439,11 +439,6 @@ export const CoursesCarousel: React.FC = () => {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="px-3 py-1 bg-brand-blue/10 border border-brand-blue/20 rounded text-brand-blue text-xs font-bold uppercase tracking-wider flex items-center gap-1 backdrop-blur-sm">
-                <Star size={12} fill="currentColor" /> Team KBça Academy
-              </span>
-            </div>
             <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-4 leading-tight">
               Estudo <span className="text-brand-blue">personalizado</span>
             </h2>

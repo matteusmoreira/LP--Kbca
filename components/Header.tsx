@@ -3,15 +3,16 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Logo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
-  <svg viewBox="0 0 160 40" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="20" r="15" stroke="#2563EB" strokeWidth="2.5" />
-    <circle cx="20" cy="20" r="6" stroke="#06B6D4" strokeWidth="1.5" />
-    <path d="M20 5v30M5 20h30" stroke="#2563EB" strokeWidth="1" strokeDasharray="2 2" opacity="0.7" />
-    <circle cx="20" cy="20" r="1.5" fill="#F97316" />
-    <text x="45" y="27" fill="white" fontSize="18" fontWeight="bold" fontFamily="Montserrat, sans-serif" letterSpacing="-0.5">
-      TEAM <tspan fill="#2563EB">KBÇA</tspan>
-    </text>
-  </svg>
+  <div className={`flex items-center gap-2 ${className}`}>
+    <img 
+      src="/logo-bola.png" 
+      alt="Team Kbça Logo" 
+      className="h-full max-h-10 w-auto object-contain" 
+    />
+    <span className="font-bold text-white tracking-tight whitespace-nowrap" style={{ fontSize: '1.15rem', fontFamily: 'Montserrat, sans-serif', letterSpacing: '-0.5px' }}>
+      TEAM <span className="text-brand-blue">KBÇA</span>
+    </span>
+  </div>
 );
 
 export const Header: React.FC = () => {
